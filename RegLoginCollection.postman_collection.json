@@ -1,0 +1,223 @@
+{
+	"id": "e0ff86b9-18cc-5119-8f30-fef6aee08f19",
+	"name": "RegLoginCollection",
+	"description": "",
+	"order": [
+		"43a3a22d-e360-9bf7-0749-09706bc3a944",
+		"3ee8998b-f7c4-4dd6-e19c-bf0f3d8c5bf3",
+		"f8a2cb1b-5734-c174-f7fb-94c78f461f61",
+		"da91252f-5510-81c8-997b-863ebe6eccc1"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1519625246384,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "3ee8998b-f7c4-4dd6-e19c-bf0f3d8c5bf3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://reqres.in/api/register",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "827ab1f0-b66e-4faa-a566-005466608974",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Bad Request\");",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1519625645412,
+			"name": "Registration uncessfull",
+			"description": "",
+			"collectionId": "e0ff86b9-18cc-5119-8f30-fef6aee08f19",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code name has string\", function () {\n    pm.response.to.have.status(\"Bad Request\");\n});\n\n\n\npm.test(\"Status code is 400\", function () {\n    pm.response.to.have.status(400);\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n    \"email\": \"sanju@fife\"\r\n   \r\n    \r\n}"
+		},
+		{
+			"id": "43a3a22d-e360-9bf7-0749-09706bc3a944",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://reqres.in/api/register",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74529e39-5a6b-4e09-9ad1-1679d48963c0",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});",
+							"",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1519625714563,
+			"name": "Registration successfully",
+			"description": "",
+			"collectionId": "e0ff86b9-18cc-5119-8f30-fef6aee08f19",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code name has string\", function () {\n    pm.response.to.have.status(\"Created\");\n});\n\npm.test(\"Successful POST request\", function () {\n    pm.expect(pm.response.code).to.be.oneOf([201,202]);\n});\n\npm.test(\"Content-Type is present\", function () {\n    pm.response.to.have.header(\"Content-Type\");\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n    \"email\": \"sydney@fife\",\r\n    \"password\": \"pistol\"\r\n}"
+		},
+		{
+			"id": "da91252f-5510-81c8-997b-863ebe6eccc1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://reqres.in/api/login",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5ef7fc94-fa14-48de-bd1d-fe8afeb42d08",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400,202]);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1519628248391,
+			"name": "login unsucessful",
+			"description": "",
+			"collectionId": "e0ff86b9-18cc-5119-8f30-fef6aee08f19",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 400\", function () {\n    pm.response.to.have.status(400);\n});\n\npm.test(\"Successful POST request\", function () {\n    pm.expect(pm.response.code).to.be.oneOf([400,202]);\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n    \"email\": \"sanju@fife\"\r\n   \r\n    \r\n}"
+		},
+		{
+			"id": "f8a2cb1b-5734-c174-f7fb-94c78f461f61",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://reqres.in/api/login",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef126ef5-cb37-4418-9e37-5e05665e3d09",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,202]);",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1519628187377,
+			"name": "Login sucessfull",
+			"description": "",
+			"collectionId": "e0ff86b9-18cc-5119-8f30-fef6aee08f19",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Successful POST request\", function () {\n    pm.expect(pm.response.code).to.be.oneOf([200,202]);\n});\n\npm.test(\"Status code name has string\", function () {\n    pm.response.to.have.status(\"OK\");\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n    \"email\": \"sanjana@gmail.com\",\r\n    \"password\": \"sanju123\"\r\n}"
+		}
+	]
+}
