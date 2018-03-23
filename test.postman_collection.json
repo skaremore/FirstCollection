@@ -1,0 +1,201 @@
+{
+	"id": "f304a0e6-89a0-cea6-8809-4cce1b5031e9",
+	"name": "test",
+	"description": "",
+	"order": [
+		"1c16096c-22f1-27f9-fb89-8e7b141cd9f9",
+		"2abf0e87-2e8d-91fd-341f-0fcbebea5388",
+		"e527d0be-a6a8-d68f-f055-c6456f77c89f"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1519291469609,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "1c16096c-22f1-27f9-fb89-8e7b141cd9f9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://postman-echo.com/get?username={{username}}&pssword={{password}}",
+			"queryParams": [
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "pssword",
+					"value": "{{password}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b0bb3fa-edea-470d-9b5c-3395801b2f38",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"    var jsonData =JSON.parse(responseBody);",
+							"   ",
+							"pm.test(\"body is username\")==responseBody.has(data.username);",
+							"pm.test(\"body is password\")==responseBody.has(data.password);",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": {
+				"type": "noauth"
+			},
+			"time": 1521790168497,
+			"name": "get user login",
+			"description": "",
+			"collectionId": "f304a0e6-89a0-cea6-8809-4cce1b5031e9",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "\n\n\n    var jsonData =JSON.parse(responseBody);\n   \npm.test(\"body is username\")==responseBody.has(data.username);\npm.test(\"body is password\")==responseBody.has(data.password);\n\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2abf0e87-2e8d-91fd-341f-0fcbebea5388",
+			"headers": "",
+			"headerData": [],
+			"url": "http://postman-echo.com/get?username={{username}}&password={{password}}",
+			"queryParams": [
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9479ed4e-7def-4949-9809-06db339686ef",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"    var jsonData =JSON.parse(responseBody);",
+							"   ",
+							"pm.test(\"body is username\")==responseBody.has(data.username);",
+							"pm.test(\"body is password\")==responseBody.has(data.password);",
+							""
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": null,
+			"time": 1519389282497,
+			"name": "userlogin1",
+			"description": "",
+			"collectionId": "f304a0e6-89a0-cea6-8809-4cce1b5031e9",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "\n    var jsonData =JSON.parse(responseBody);\n   \npm.test(\"body is username\")==responseBody.has(data.username);\npm.test(\"body is password\")==responseBody.has(data.password);\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "e527d0be-a6a8-d68f-f055-c6456f77c89f",
+			"headers": "",
+			"headerData": [],
+			"url": "http://postman-echo.com/get?id={{id}}&name={{name}}&city={{city}}",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "{{id}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "{{name}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "city",
+					"value": "{{city}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eaf8095f-e02f-4cf3-a358-f564e68888cb",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"   ",
+							"pm.test(\"body contain id\")==responseBody.has(data.id);",
+							"pm.test(\"body contain name\")==responseBody.has(data.name);",
+							"pm.test(\"body contain city\")==responseBody.has(data.city);",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": null,
+			"time": 1519391532508,
+			"name": "GetEmpDetails",
+			"description": "",
+			"collectionId": "f304a0e6-89a0-cea6-8809-4cce1b5031e9",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "var jsonData =JSON.parse(responseBody);\n   \npm.test(\"body contain id\")==responseBody.has(data.id);\npm.test(\"body contain name\")==responseBody.has(data.name);\npm.test(\"body contain city\")==responseBody.has(data.city);\n\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
